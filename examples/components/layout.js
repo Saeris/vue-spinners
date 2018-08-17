@@ -64,7 +64,7 @@ export class Layout extends Vue {
         <FixedHeader fixed$sync={this.isFixed} threshold={330}>
           <Header class={{ fixed: this.isFixed }} color={this.color}>
             {!this.isFixed ? (
-              <a href="">
+              <a href="https://github.com/Saeris/vue-spinners">
                 <Ribbon
                   src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
                   alt="Fork me on GitHub"
@@ -76,7 +76,7 @@ export class Layout extends Vue {
         </FixedHeader>
         {this.$slots.default}
         <footer>
-          <a href={``}>GitHub Repository</a>
+          <a href="https://github.com/Saeris/vue-spinners">GitHub Repository</a>
         </footer>
       </main>
     )
