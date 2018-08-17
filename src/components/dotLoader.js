@@ -1,5 +1,9 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
+
+const rotate = keyframes`
+  100% {transform: rotate(360deg)}
+`
 
 const bounce = keyframes`
   0%, 100% {transform: scale(0)} 
@@ -11,26 +15,27 @@ const Wrapper = styled(`div`)`
     position: relative;
     width: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
     height: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
+    animation-fill-mode: forwards;
+    animation: ${rotate} 2s 0s infinite linear;
   }
 `
 
 const El = styled(`div`)`
    {
     position: absolute;
-    width: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
-    height: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
+    top: ${({ version }) => (version % 2 ? '0' : 'auto')};
+    bottom: ${({ version }) => (version % 2 ? 'auto' : '0')};
+    height: ${({ size, sizeUnit }) => `${size / 2}${sizeUnit}`};
+    width: ${({ size, sizeUnit }) => `${size / 2}${sizeUnit}`};
     background-color: ${({ color }) => color};
     border-radius: 100%;
-    opacity: 0.6;
-    top: 0;
-    left: 0;
-    animation-fill-mode: both;
-    animation: ${bounce} 2.1s ${({ version }) => (version === 1 ? '1s' : '0s')}
-      infinite ease-in-out;
+    animation-fill-mode: forwards;
+    animation: ${bounce} 2s ${({ version }) => (version === 2 ? '-1s' : '0s')}
+      infinite linear;
   }
 `
 
-export const BounceLoader = {
+export const DotLoader = {
   functional: true,
   props: {
     loaderStyle: { type: Object, default: () => ({}) },

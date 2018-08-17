@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'vue-emotion'
-import { characterRange, range, zip } from './utils'
+import { characterRange, range, zip } from '../utils'
 
 const fade = keyframes`
   50% {opacity: 0.3} 

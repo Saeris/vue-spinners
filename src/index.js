@@ -1,21 +1,8 @@
-export { BarLoader } from './barLoader'
-export { BeatLoader } from './beatLoader'
-export { BounceLoader } from './bounceLoader'
-export { CircleLoader } from './circleLoader'
-export { ClimbingBoxLoader } from './climbingBoxLoader'
-export { ClipLoader } from './clipLoader'
-export { DotLoader } from './dotLoader'
-export { FadeLoader } from './fadeLoader'
-export { GridLoader } from './gridLoader'
-export { HashLoader } from './hashLoader'
-export { MoonLoader } from './moonLoader'
-export { PacmanLoader } from './pacmanLoader'
-export { PropagateLoader } from './propagateLoader'
-export { PulseLoader } from './pulseLoader'
-export { RingLoader } from './ringLoader'
-export { RiseLoader } from './riseLoader'
-export { RotateLoader } from './rotateLoader'
-export { ScaleLoader } from './scaleLoader'
-export { SkewLoader } from './skewLoader'
-export { SquareLoader } from './squareLoader'
-export { SyncLoader } from './syncLoader'
+import Vue from 'vue'
+import * as Components from './components'
+
+Object.entries(Components).forEach(([name, component]) => {
+  Vue.component(name, component)
+})
+
+export default Components

@@ -1,13 +1,10 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
-const rotate = keyframes`
+const circle = keyframes`
+  0% {transform: rotate(0deg)} 
+  50% {transform: rotate(180deg)}
   100% {transform: rotate(360deg)}
-`
-
-const bounce = keyframes`
-  0%, 100% {transform: scale(0)} 
-  50% {transform: scale(1.0)}
 `
 
 const Wrapper = styled(`div`)`
@@ -15,33 +12,35 @@ const Wrapper = styled(`div`)`
     position: relative;
     width: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
     height: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
-    animation-fill-mode: forwards;
-    animation: ${rotate} 2s 0s infinite linear;
   }
 `
 
 const El = styled(`div`)`
    {
     position: absolute;
-    top: ${({ version }) => (version % 2 ? '0' : 'auto')};
-    bottom: ${({ version }) => (version % 2 ? 'auto' : '0')};
-    height: ${({ size, sizeUnit }) => `${size / 2}${sizeUnit}`};
-    width: ${({ size, sizeUnit }) => `${size / 2}${sizeUnit}`};
-    background-color: ${({ color }) => color};
+    height: ${({ size, sizeUnit, version }) =>
+      `${size * (1 - version / 10)}${sizeUnit}`};
+    width: ${({ size, sizeUnit, version }) =>
+      `${size * (1 - version / 10)}${sizeUnit}`};
+    border: 1px solid ${({ color }) => color};
     border-radius: 100%;
-    animation-fill-mode: forwards;
-    animation: ${bounce} 2s ${({ version }) => (version === 2 ? '-1s' : '0s')}
-      infinite linear;
+    transition: 2s;
+    border-bottom: none;
+    border-right: none;
+    top: ${({ version }) => version * 0.7 * 2.5}%;
+    left: ${({ version }) => version * 0.35 * 2.5}%;
+    animation-fill-mode: '';
+    animation: ${circle} 1s ${({ version }) => version * 0.2}s infinite linear;
   }
 `
 
-export const DotLoader = {
+export const CircleLoader = {
   functional: true,
   props: {
     loaderStyle: { type: Object, default: () => ({}) },
     loading: { type: Boolean, default: true },
     color: { type: String, default: `#000000` },
-    size: { type: Number, default: 60 },
+    size: { type: Number, default: 50 },
     sizeUnit: { type: String, default: 'px' }
   },
   render(h, { props }) {
@@ -51,7 +50,7 @@ export const DotLoader = {
         size={props.size}
         sizeUnit={props.sizeUnit}
       >
-        {range(2, 1).map(i => (
+        {range(5).map(i => (
           <El
             color={props.color}
             size={props.size}

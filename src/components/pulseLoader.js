@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
 const pulse = keyframes`
   0% {transform: scale(1);opacity: 1} 

@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Code, ColorPicker, Layout, LoaderItem } from './components'
-import * as Spinners from '../src'
+import Spinners from '../src'
 import './styles/index.scss'
-
-Vue.config.productionTip = false
 
 @Component
 class App extends Vue {

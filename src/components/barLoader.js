@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { calculateRgba, range } from './utils'
+import { calculateRgba, range } from '../utils'
 
 const long = keyframes`
   0% {left: -35%;right: 100%} 

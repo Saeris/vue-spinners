@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
 // 1.5 4.5 7.5
 const distance = [1, 3, 5]

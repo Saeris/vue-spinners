@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
 // This returns an animation
 const pacman = [

@@ -15,7 +15,7 @@
     ],
     "stage-2"
   ],
-  "plugins": [
+    "plugins": [
     "vue-jsx-sync",
     "jsx-vue-functional",
     "transform-class-properties",

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
 const right = keyframes`
   0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}

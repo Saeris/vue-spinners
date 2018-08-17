@@ -1,5 +1,5 @@
 {
-  "name": "vue-spinners",
+  "name": "@saeris/vue-spinners",
   "version": "1.0.0",
   "description": "Vue port of React Spinners",
   "main": "examples/index.js",
@@ -86,6 +86,12 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json",
+    "*.js"
   ],
   "keywords": [
     "loading spinners",

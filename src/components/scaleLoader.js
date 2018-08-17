@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
 const scale = keyframes`
   0% {transform: scaley(1.0)}

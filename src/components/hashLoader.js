@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'vue-emotion'
-import { calculateRgba, range } from './utils'
+import { calculateRgba, range } from '../utils'
 
 const thickness = size => size / 5
 const lat = size => (size - thickness(size)) / 2
@@ -58,9 +58,9 @@ const El = styled(`div`)`
     transform: translate(-50%, -50%);
     animation-fill-mode: none;
     animation: ${({ size, sizeUnit, color, version }) =>
-        version === 1
-          ? before(size, sizeUnit, color)
-          : after(size, sizeUnit, color)}
+      version === 1
+        ? before(size, sizeUnit, color)
+        : after(size, sizeUnit, color)}
       2s infinite;
   }
 `

@@ -1,31 +1,27 @@
 import styled, { keyframes } from 'vue-emotion'
-import { range } from './utils'
+import { range } from '../utils'
 
-const beat = keyframes`
-  50% {transform: scale(0.75);opacity: 0.2} 
-  100% {transform: scale(1);opacity: 1}
-`
-
-const Wrapper = styled(`div`)`
-   {
-  }
+const sync = keyframes`
+  33% {transform: translateY(10px)}
+  66% {transform: translateY(-10px)}
+  100% {transform: translateY(0)}
 `
 
 const El = styled(`div`)`
    {
-    display: inline-block;
     background-color: ${({ color }) => color};
     width: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
     height: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
     margin: ${({ margin }) => margin};
     border-radius: 100%;
-    animation: ${beat} 0.7s ${({ version }) => (version % 2 ? '0s' : '0.35s')}
-      infinite linear;
+    display: inline-block;
+    animation: ${sync} 0.6s ${({ version }) => version * 0.07}s infinite
+      ease-in-out;
     animation-fill-mode: both;
   }
 `
 
-export const BeatLoader = {
+export const SyncLoader = {
   functional: true,
   props: {
     loaderStyle: { type: Object, default: () => ({}) },
@@ -37,17 +33,17 @@ export const BeatLoader = {
   },
   render(h, { props }) {
     return props.loading ? (
-      <Wrapper class={props.loaderStyle}>
+      <div class={props.loaderStyle}>
         {range(3, 1).map(i => (
           <El
             color={props.color}
+            margin={props.margin}
             size={props.size}
             sizeUnit={props.sizeUnit}
-            margin={props.margin}
             version={i}
           />
         ))}
-      </Wrapper>
+      </div>
     ) : null
   }
 }
