@@ -1,4 +1,4 @@
-# React Spinners
+# Vue Spinners
 
 A Vue.js port of [react-spinners](https://github.com/davidhu2000/react-spinners).
 
