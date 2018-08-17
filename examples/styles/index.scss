@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+textarea,
+input,
+button {
+  outline: none;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 30px white inset;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #e2e2e2;
+
+  button {
+    border: none;
+    background: none;
+
+    &:active {
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      width: auto;
+    }
+  }
+}
+
+.controls {
+  top: 370px;
+  left: 20px;
+  position: fixed;
+  z-index: 999;
+
+  button {
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    background: #2b303b;
+    color: #fff;
+    border: none;
+    opacity: 0.9;
+    -webkit-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    padding: 0 28px;
+
+    &:hover {
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+        0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+      opacity: 1;
+    }
+  }
+}
+
+.code {
+  margin: 50px auto;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    background: #2b303b;
+    padding: 16px 32px;
+    font-size: 20px;
+    margin: 0 auto;
+    font-family: Courier New, Courier, monospace;
+    opacity: 0.9;
+    transition: 0.3s ease-out;
+
+    &:hover {
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+        0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+      opacity: 1;
+    }
+  }
+}
+
+.spinners {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    li {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 0.5px solid #e2e2e2;
+      box-shadow: 1px 1px 1px #e2e2e2;
+      width: 250px;
+      height: 250px;
+      margin: 30px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      position: relative;
+
+      .title {
+        position: absolute;
+        top: 20px;
+      }
+
+      .form {
+        position: absolute;
+        bottom: 5px;
+        font-family: sans-serif, serif;
+        width: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .form-input {
+          margin: 3px;
+          display: flex;
+          width: 50px;
+          height: 20px;
+          position: relative;
+
+          input {
+            flex: 1;
+            width: 50%;
+            padding: 0 4px;
+            display: block;
+            border: none;
+            border-bottom: 1px solid #757575;
+            text-align: center;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .bar {
+            position: absolute;
+            display: block;
+            width: 100%;
+            bottom: -1px;
+
+            &::before {
+              left: 50%;
+            }
+
+            &::before,
+            &::after {
+              content: '';
+              height: 2px;
+              width: 0;
+              bottom: 1px;
+              position: absolute;
+              background: #36d7b7;
+              -webkit-transition: 0.2s ease all;
+              -o-transition: 0.2s ease all;
+              transition: 0.2s ease all;
+            }
+          }
+
+          label {
+            top: -20px;
+            flex: 1;
+            font-size: 10px;
+            line-height: 20px;
+            text-align: center;
+            color: #999;
+            position: absolute;
+            pointer-events: none;
+            transition: 0.2s ease all;
+            width: 50px;
+          }
+
+          &:focus {
+            .bar {
+              &::before,
+              &::after {
+                width: 50%;
+              }
+            }
+
+            label {
+              color: #111;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 30px;
+  margin: 15px 0 0 0;
+  background: #2b303b;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #ccc;
+  }
+}
