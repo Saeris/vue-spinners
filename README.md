@@ -22,10 +22,9 @@ Each loader accepts a `loading` prop as a boolean. The loader will not render an
 ### Example
 
 ```js
-import Vue from 'vue'
-import { ClipLoader } from '@saeris/vue-spinners';
+import { ClipLoader } from '@saeris/vue-spinners'
 
-export const MyComponent = {
+export default {
   data: () => ({
     loading: true
   }),
