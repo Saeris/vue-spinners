@@ -1,8 +1,25 @@
 import Vue from "vue"
 import Component from "vue-class-component"
-import Spinners from "@saeris/vue-spinners"
+import Components from "@saeris/vue-spinners"
+import styled from "vue-emotion"
 import { Code, ColorPicker, Layout, LoaderItem } from "./components"
 import "./styles/index.scss"
+
+const Spinners = styled(`section`)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+  width: 80%;
+  margin: 0 auto;
+`
+
+const List = styled(`ul`)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: #fff;
+`
 
 @Component
 class App extends Vue {
@@ -20,14 +37,14 @@ class App extends Vue {
     return (
       <Layout color={this.color}>
         <ColorPicker color={this.color} updateColor={this.updateColor} />
-        <section class="spinners">
+        <Spinners>
           <Code />
-          <ul>
-            {Object.entries(Spinners).map(([name, spinner]) => (
+          <List>
+            {Object.entries(Components).map(([name, spinner]) => (
               <LoaderItem color={this.color} name={name} spinner={spinner} />
             ))}
-          </ul>
-        </section>
+          </List>
+        </Spinners>
       </Layout>
     )
   }

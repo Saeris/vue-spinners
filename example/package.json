@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve ./src/main.js",
     "build": "vue-cli-service build --modern --target app --name demo",
-    "lint": "vue-cli-service lint",
     "test": "yarn test:unit",
+    "lint": "vue-cli-service lint",
+    "start": "vue-cli-service serve ./src/main.js",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -19,6 +19,8 @@
     "vue-emotion": "0.4.2"
   },
   "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
@@ -80,12 +82,22 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "src/main.js",
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Saeris/vue-spinners"
   },
   "description": "Vue port of React Spinners",
+  "license": "MIT",
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
@@ -105,14 +117,5 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
+  "main": "src/main.js"
 }

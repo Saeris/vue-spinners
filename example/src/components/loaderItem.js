@@ -1,6 +1,29 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import styled from "vue-emotion"
 import { Form } from './form'
+
+const Item = styled(`li`)`
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 0.5px solid #e2e2e2;
+  box-shadow: 1px 1px 1px #e2e2e2;
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  position: relative;
+`
+
+const Title = styled(`span`)`
+  position: absolute;
+  top: 20px;
+`
 
 @Component({
   props: {
@@ -67,11 +90,11 @@ export class LoaderItem extends Vue {
 
   render() {
     return (
-      <li>
-        <span class="title">{this.name}</span>
+      <Item>
+        <Title>{this.name}</Title>
         {this.renderSpinner(this.spinner)}
         <Form inputs={this.defaults} update={this.update.bind(this)} />
-      </li>
+      </Item>
     )
   }
 }
