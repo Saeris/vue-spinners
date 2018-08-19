@@ -4,7 +4,8 @@ A Vue.js port of [react-spinners](https://github.com/davidhu2000/react-spinners)
 
 ## Demo
 
-[Demo Page](https://v653m2plw5.codesandbox.io/)
+[Demo Sandbox](https://codesandbox.io/s/github/Saeris/vue-spinners/tree/master/example)
+[Demo Page](https://0qo4owo1qn.codesandbox.io/)
 
 ## Installation
 
@@ -19,7 +20,7 @@ Each loader has their own default properties. You can overwrite the defaults by 
 Each loader accepts a `loading` prop as a boolean. The loader will not render anything if `loading` is `false`. The `loading` prop defaults to `true`.
 
 ### Example
- 
+
 ```js
 import Vue from 'vue'
 import { ClipLoader } from '@saeris/vue-spinners';
@@ -38,7 +39,7 @@ export const MyComponent = {
           size={150}
           sizeUnit={"px"}
         />
-      </div> 
+      </div>
     )
   }
 }

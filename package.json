@@ -1,7 +1,6 @@
 {
   "name": "@saeris/vue-spinners",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
   "scripts": {
     "start": "vue-cli-service serve ./example/src/main.js",
     "build": "yarn run build:lib && cd ./example && yarn run build && cd ../",
@@ -44,7 +43,7 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "src/index.js",
+  "main": "./lib/@saeris/vue-spinners.common.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Saeris/vue-spinners"

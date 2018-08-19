@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Component from 'vue-class-component'
-import { Code, ColorPicker, Layout, LoaderItem } from './components'
-import Spinners from '../../src'
-import './styles/index.scss'
+import Vue from "vue"
+import Component from "vue-class-component"
+import Spinners from "@saeris/vue-spinners"
+import { Code, ColorPicker, Layout, LoaderItem } from "./components"
+import "./styles/index.scss"
 
 @Component
 class App extends Vue {
@@ -19,10 +19,7 @@ class App extends Vue {
   render() {
     return (
       <Layout color={this.color}>
-        <ColorPicker
-          color={this.color}
-          updateColor={this.updateColor}
-        />
+        <ColorPicker color={this.color} updateColor={this.updateColor} />
         <section class="spinners">
           <Code />
           <ul>
@@ -36,7 +33,8 @@ class App extends Vue {
   }
 }
 
-new Vue({ // eslint-disable-line
+// eslint-disable-next-line
+new Vue({
   el: `#app`,
   render: h => h(App)
 })
