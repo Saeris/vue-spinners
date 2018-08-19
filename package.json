@@ -1,6 +1,23 @@
 {
   "name": "@saeris/vue-spinners",
-  "version": "1.0.3",
+  "version": "1.0.4",
+  "description": "Vue port of React Spinners",
+  "keywords": [
+    "loading spinners",
+    "loaders",
+    "spinners",
+    "loading indicators"
+  ],
+  "main": "./lib/@saeris/vue-spinners.common.js",
+  "unpkg": "./lib/@saeris/vue-spinners.umd.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Saeris/vue-spinners"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
   "scripts": {
     "start": "vue-cli-service serve ./example/src/main.js",
     "build": "yarn build:demo && yarn build:lib",
@@ -44,27 +61,11 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "./lib/@saeris/vue-spinners.common.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Saeris/vue-spinners"
-  },
-  "description": "Vue port of React Spinners",
-  "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
-  },
   "files": [
     "lib/*",
     "src/*",
     "*.json",
     "*.js"
-  ],
-  "keywords": [
-    "loading spinners",
-    "loaders",
-    "spinners",
-    "loading indicators"
   ],
   "gitHooks": {
     "pre-commit": "lint-staged"

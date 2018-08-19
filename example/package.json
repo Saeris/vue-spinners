@@ -10,7 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@saeris/vue-spinners": "1.0.1",
+    "@saeris/vue-spinners": "^1.0.4",
     "emotion": "9.2.6",
     "v-click-outside": "1.0.5",
     "vue": "^2.5.2",
