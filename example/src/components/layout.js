@@ -1,20 +1,24 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import FixedHeader from 'vue-fixed-header'
 import styled from 'vue-emotion'
+
+const Main = styled(`main`)`
+  .spinners {
+    margin-top: ${({ isFixed }) => `${isFixed ? 250 : 0}px`}
+  }
+`
 
 const Header = styled(`header`)`
   position: realtive;
   display: flex;
   align-items: center;
   width: 100%;
-  height: 360px;
+  height: ${({ height }) => `${height}px`};
   color: #fff;
   z-index: 1000;
   background: linear-gradient(90deg, ${({ color }) => color}, #2b303b);
 
   &.fixed {
-    height: 40px;
     position: fixed;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 3px 0px,
@@ -42,6 +46,18 @@ const Logo = styled(`h1`)`
   }
 `
 
+const Footer = styled(`footer`)`
+  padding: 30px;
+  margin: 15px 0 0 0;
+  background: #2b303b;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #ccc;
+  }
+`
+
 const Ribbon = styled(`img`)`
   position: absolute;
   top: 0;
@@ -51,34 +67,55 @@ const Ribbon = styled(`img`)`
 @Component({
   props: {
     color: {
-      type: String
+      type: String,
+      required: true
     }
   }
 })
 export class Layout extends Vue {
   isFixed = false
+  height = 360
+
+  beforeMount() {
+    window.addEventListener(`scroll`, this.handleScroll, true)
+  }
+
+  beforeDestroy() {
+    window.removeEventListener(`scorll`, this.handleScroll, true)
+  }
+
+  handleScroll() {
+    let height = 360 - window.scrollY
+    if (height > 200) {
+      this.height = height
+      this.isFixed = false
+    } else {
+      this.height = 40
+      this.isFixed = true
+    }
+  }
 
   render() {
     return (
-      <main>
-        <FixedHeader fixed$sync={this.isFixed} threshold={330}>
-          <Header class={{ fixed: this.isFixed }} color={this.color}>
-            {!this.isFixed ? (
+      <Main isFixed={this.isFixed}>
+        <Header class={{ fixed: this.isFixed }} height={this.height} color={this.color}>
+          {this.isFixed
+            ? null
+            : (
               <a href="https://github.com/Saeris/vue-spinners">
                 <Ribbon
                   src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
                   alt="Fork me on GitHub"
                 />
               </a>
-            ) : null}
-            <Logo class={{ fixed: this.isFixed }}>Vue Spinners</Logo>
-          </Header>
-        </FixedHeader>
+            )}
+          <Logo class={{ fixed: this.isFixed }}>Vue Spinners</Logo>
+        </Header>
         {this.$slots.default}
-        <footer>
+        <Footer>
           <a href="https://github.com/Saeris/vue-spinners">GitHub Repository</a>
-        </footer>
-      </main>
+        </Footer>
+      </Main>
     )
   }
 }

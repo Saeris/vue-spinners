@@ -1,17 +1,20 @@
 {
-  "name": "@saeris/vue-spinners",
+  "name": "@saeris/vue-spinner-example",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve ./example/src/main.js",
-    "build": "yarn run build:lib && cd ./example && yarn run build && cd ../",
-    "build:lib": "vue-cli-service build --dest lib --target lib ./src/index.js",
+    "start": "vue-cli-service serve ./src/main.js",
+    "build": "vue-cli-service build --modern --target app --name demo",
     "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit"
+    "test": "yarn test:unit",
+    "test:unit": "vue-cli-service test:unit"
   },
-  "peerDependencies": {
+  "dependencies": {
     "emotion": "9.2.6",
+    "v-click-outside": "1.0.5",
     "vue": "^2.5.2",
+    "vue-class-component": "6.2.0",
+    "vue-color": "2.6.0",
     "vue-emotion": "0.4.2"
   },
   "devDependencies": {
@@ -22,21 +25,16 @@
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
-    "emotion": "9.2.6",
     "eslint": "^5.4.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jest": "^21.21.0",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
-    "jest": "^23.5.0",
     "lint-staged": "^7.2.2",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
-    "vue": "^2.5.2",
-    "vue-emotion": "0.4.2",
     "vue-template-compiler": "^2.5.17"
   },
   "browserslist": [
@@ -44,7 +42,7 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "src/index.js",
+  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Saeris/vue-spinners"
@@ -55,7 +53,7 @@
     "npm": ">= 3.0.0"
   },
   "files": [
-    "lib/*",
+    "dist/*",
     "src/*",
     "*.json",
     "*.js"

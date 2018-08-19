@@ -5,13 +5,16 @@ import { Form } from './form'
 @Component({
   props: {
     spinner: {
-      type: Object
+      type: Object,
+      required: true
     },
     name: {
-      type: String
+      type: String,
+      required: true
     },
     color: {
-      type: String
+      type: String,
+      required: true
     }
   }
 })

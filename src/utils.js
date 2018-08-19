@@ -1,34 +1,29 @@
-/* @flow */
-export const calculateRgba = (color, opacity) => {
-  if (color[0] === '#') {
-    color = color.slice(1)
+export const calculateRgba = (input, opacity) => {
+  let color
+  if (input[0] === `#`) {
+    color = input.slice(1)
   }
 
   if (color.length === 3) {
-    let res = ''
-    color.split('').forEach(c => {
+    let res = ``
+    color.split(``).forEach(c => {
       res += c
       res += c
     })
     color = res
   }
 
-  let rgbValues = color
+  const rgbValues = color
     .match(/.{2}/g)
     .map(hex => parseInt(hex, 16))
-    .join(', ')
+    .join(`, `)
   return `rgba(${rgbValues}, ${opacity})`
 }
 
-export const range = (
-  size: number,
-  startAt: number = 0
-): $ReadOnly<Array<number>> => [...Array(size).keys()].map(i => i + startAt)
+export const range = (size, startAt = 0) =>
+  [...Array(size).keys()].map(i => i + startAt)
 
-export const characterRange = (
-  startChar: string,
-  endChar: string
-): $Readonly<Array<string>> =>
+export const characterRange = (startChar, endChar) =>
   String.fromCharCode(
     ...range(
       endChar.charCodeAt(0) - startChar.charCodeAt(0),
@@ -36,8 +31,5 @@ export const characterRange = (
     )
   )
 
-export const zip = (
-  arr: Array<any>,
-  ...arrs: Array<any>
-): $ReadOnly<Array<any>> =>
-  arr.map((val, i) => arrs.reduce((a, arr) => [...a, arr[i]], [val]))
+export const zip = (arr, ...arrs) =>
+  arr.map((val, i) => arrs.reduce((list, curr) => [...list, curr[i]], [val]))

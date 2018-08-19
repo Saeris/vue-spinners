@@ -1,12 +1,12 @@
 import styled, { keyframes } from 'vue-emotion'
 
 const clip = keyframes`
-  0% {transform: rotate(0deg) scale(1)} 
+  0% {transform: rotate(0deg) scale(1)}
   50% {transform: rotate(180deg) scale(0.8)}
   100% {transform: rotate(360deg) scale(1)}
 `
 
-const El = styled(`div`)`
+const Ring = styled(`div`)`
   background: transparent !important;
   width: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
   height: ${({ size, sizeUnit }) => `${size}${sizeUnit}`};
@@ -22,16 +22,15 @@ const El = styled(`div`)`
 export const ClipLoader = {
   functional: true,
   props: {
-    loaderStyle: { type: Object, default: () => ({}) },
     loading: { type: Boolean, default: true },
     color: { type: String, default: `#000000` },
     size: { type: Number, default: 35 },
-    sizeUnit: { type: String, default: 'px' }
+    sizeUnit: { type: String, default: `px` }
   },
-  render(h, { props }) {
+  render(h, { props, data }) {
     return props.loading ? (
-      <El
-        class={props.loaderStyle}
+      <Ring
+        {...data}
         size={props.size}
         sizeUnit={props.sizeUnit}
         color={props.color}

@@ -2,42 +2,38 @@ import styled, { css, keyframes } from 'vue-emotion'
 import { characterRange, range, zip } from '../utils'
 
 const fade = keyframes`
-  50% {opacity: 0.3} 
+  50% {opacity: 0.3}
   100% {opacity: 1}
 `
 
-const radius = 20
-const quarter = radius / 2 + radius / 5.5
+const rad = 20
+const quarter = rad / 2 + rad / 5.5
 
 const Wrapper = styled(`div`)`
-   {
-    position: relative;
-    font-size: 0;
-    top: ${radius}px;
-    left: ${radius}px;
-    width: ${radius * 3}px;
-    height: ${radius * 3}px;
-  }
+  position: relative;
+  font-size: 0;
+  top: ${rad}px;
+  left: ${rad}px;
+  width: ${rad * 3}px;
+  height: ${rad * 3}px;
 `
 
-const El = styled(`div`)`
-   {
-    ${({ variation }) => variation} position: absolute;
-    width: ${({ width, widthUnit }) => `${width}${widthUnit}`};
-    height: ${({ height, heightUnit }) => `${height}${heightUnit}`};
-    margin: ${({ margin }) => margin};
-    background-color: ${({ color }) => color};
-    border-radius: ${({ radius, radiusUnit }) => `${radius}${radiusUnit}`};
-    transition: 2s;
-    animation-fill-mode: 'both';
-    animation: ${fade} 1.2s ${({ version }) => version * 0.12}s infinite
-      ease-in-out;
-  }
+const Bar = styled(`div`)`
+  position: absolute;
+  width: ${({ width, widthUnit }) => `${width}${widthUnit}`};
+  height: ${({ height, heightUnit }) => `${height}${heightUnit}`};
+  margin: ${({ margin }) => margin};
+  background-color: ${({ color }) => color};
+  border-radius: ${({ radius, radiusUnit }) => `${radius}${radiusUnit}`};
+  transition: 2s;
+  animation-fill-mode: 'both';
+  animation: ${({ version }) => `${fade} 1.2s ${version * 0.12}s infinite ease-in-out`};
+  ${({ variation }) => variation}
 `
 
 const styles = {
   a: css`
-    top: ${radius}px;
+    top: ${rad}px;
     left: 0;
   `,
   b: css`
@@ -47,7 +43,7 @@ const styles = {
   `,
   c: css`
     top: 0;
-    left: ${radius}px;
+    left: ${rad}px;
     transform: rotate(90deg);
   `,
   d: css`
@@ -56,7 +52,7 @@ const styles = {
     transform: rotate(45deg);
   `,
   e: css`
-    top: ${-radius}px;
+    top: ${-rad}px;
     left: 0;
   `,
   f: css`
@@ -66,7 +62,7 @@ const styles = {
   `,
   g: css`
     top: 0;
-    left: ${-radius}px;
+    left: ${-rad}px;
     transform: rotate(90deg);
   `,
   h: css`
@@ -81,7 +77,6 @@ const rows = zip(characterRange(`a`, `i`).split(``), range(9, 1))
 export const FadeLoader = {
   functional: true,
   props: {
-    loaderStyle: { type: Object, default: () => ({}) },
     loading: { type: Boolean, default: true },
     color: { type: String, default: `#000000` },
     height: { type: Number, default: 15 },
@@ -92,11 +87,11 @@ export const FadeLoader = {
     heightUnit: { type: String, default: `px` },
     radiusUnit: { type: String, default: `px` }
   },
-  render(h, { props }) {
+  render(h, { props, data }) {
     return props.loading ? (
-      <Wrapper class={props.loaderStyle}>
+      <Wrapper {...data}>
         {rows.map(([style, i]) => (
-          <El
+          <Bar
             color={props.color}
             margin={props.margin}
             width={props.width}

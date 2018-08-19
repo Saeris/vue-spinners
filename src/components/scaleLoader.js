@@ -7,24 +7,19 @@ const scale = keyframes`
   100% {transform: scaley(1.0)}
 `
 
-const El = styled(`div`)`
-   {
-    background-color: ${({ color }) => color};
-    width: ${({ width, widthUnit }) => `${width}${widthUnit}`};
-    height: ${({ height, heightUnit }) => `${height}${heightUnit}`};
-    margin: ${({ margin }) => margin};
-    border-radius: ${({ radius, radiusUnit }) => `${radius}${radiusUnit}`};
-    display: inline-block;
-    animation: ${scale} 1s ${({ version }) => version * 0.1}s infinite
-      cubic-bezier(0.2, 0.68, 0.18, 1.08);
-    animation-fill-mode: both;
-  }
+const Bar = styled(`div`)`
+  display: inline-block;
+  width: ${({ width, widthUnit }) => `${width}${widthUnit}`};
+  height: ${({ height, heightUnit }) => `${height}${heightUnit}`};
+  margin: ${({ margin }) => margin};
+  border-radius: ${({ radius, radiusUnit }) => `${radius}${radiusUnit}`};
+  background-color: ${({ color }) => color};
+  animation: ${({ version }) => `${scale} 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) ${version * 0.1}s infinite normal both running`};
 `
 
 export const ScaleLoader = {
   functional: true,
   props: {
-    loaderStyle: { type: Object, default: () => ({}) },
     loading: { type: Boolean, default: true },
     color: { type: String, default: `#000000` },
     height: { type: Number, default: 35 },
@@ -35,11 +30,11 @@ export const ScaleLoader = {
     radiusUnit: { type: String, default: `px` },
     margin: { type: String, default: `2px` }
   },
-  render(h, { props }) {
+  render(h, { props, data }) {
     return props.loading ? (
-      <div class={props.loaderStyle}>
+      <div {...data}>
         {range(5, 1).map(i => (
-          <El
+          <Bar
             color={props.color}
             height={props.height}
             heightUnit={props.heightUnit}
