@@ -8,7 +8,7 @@ export function install(Vue) {
   })
 }
 
-const plugin = {
+export const VueSpinners = {
   install
 }
 
@@ -19,7 +19,7 @@ if (typeof window !== `undefined`) {
   GlobalVue = global.Vue
 }
 if (GlobalVue) {
-  GlobalVue.use(plugin)
+  GlobalVue.use(VueSpinners)
 }
 
 export default Components
