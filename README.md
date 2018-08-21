@@ -15,14 +15,34 @@ yarn add @saeris/vue-spinners
 
 ## Usage
 
-Each loader has their own default properties. You can overwrite the defaults by passing props into the loaders.
+There are a number of ways you can use this library! Here are a few examples:
 
-Each loader accepts a `loading` prop as a boolean. The loader will not render anything if `loading` is `false`. The `loading` prop defaults to `true`.
+**[Vue Plugin](https://vuejs.org/v2/guide/plugins.html#Using-a-Plugin)**
+```js
+import Vue from 'vue'
+import { VueSpinners } from '@saeris/vue-spinners'
 
-### Example
+Vue.use(VueSpinners)
+
+// Each spinner can now be used in your templates anywhere in the app!
+```
+
+**[Local Component Registration](https://vuejs.org/v2/guide/components-registration.html#Local-Registration)**
+```js
+import { BarLoader } from '@saeris/vue-spinners'
+
+export default {
+  components: {
+    BarLoader
+  },
+  // ...
+}
+```
+
+**[JSX Component](https://vuejs.org/v2/guide/render-function.html#JSX)**
 
 ```js
-import { ClipLoader } from '@saeris/vue-spinners'
+import { BarLoader } from '@saeris/vue-spinners'
 
 export default {
   data: () => ({
@@ -44,6 +64,22 @@ export default {
 }
 ```
 
+**[Unpkg Import](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html#What-does-my-packaged-component-look-like)**
+```html
+<!--Load libraries in your page's header-->
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/@saeris/vue-spinners"></script>
+
+<!--Use a component somewhere in your app-->
+<div id="app">
+  <bar-loader class="custom-class" :color="#bada55" :loading="loading" :size="150" :sizeUnit="px"></bar-loader>
+</div>
+
+<script>
+  new Vue({ el: '#app', data: { loading: true } })
+</script>
+```
+
 ## Available Loaders, PropTypes, and Default Values
 
 Common default props for all loaders:
@@ -61,8 +97,8 @@ BarLoader               |          | `4`        | `100`     |            |
 BeatLoader              | `15`     |            |           |            | `2px`
 BounceLoader            | `60`     |            |           |            |
 CircleLoader            | `50`     |            |           |            |
-ClipLoader              | `35`     |            |           |            |
 ClimbingBoxLoader       | `15`     |            |           |            |
+ClipLoader              | `35`     |            |           |            |
 DotLoader               | `60`     |            |           |            | `2px`
 FadeLoader              |          | `15`       | `5`       | `2`        | `2px`
 GridLoader              | `15`     |            |           |            |
@@ -75,4 +111,10 @@ RingLoader              | `60`     |            |           |            | `2px`
 RiseLoader              | `15`     |            |           |            | `2px`
 RotateLoader            | `15`     |            |           |            | `2px`
 ScaleLoader             |          | `35`       | `4`       | `2`        | `2px`
+SkewLoader              | `20`     |            |           |            |
+SquareLoader            | `50`     |            |           |            |
 SyncLoader              | `15`     |            |           |            | `2px`
+
+## Acknowledgements
+
+This library is a Vue port of [react=spinners](https://github.com/davidhu2000/react-spinners) by [David Hu](https://github.com/davidhu2000), who's library is based on [Halogen](https://github.com/yuanyan/halogen).
