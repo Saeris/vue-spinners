@@ -117,4 +117,4 @@ SyncLoader              | `15`     |            |           |            | `2px`
 
 ## Acknowledgements
 
-This library is a Vue port of [react=spinners](https://github.com/davidhu2000/react-spinners) by [David Hu](https://github.com/davidhu2000), who's library is based on [Halogen](https://github.com/yuanyan/halogen).
+This library is a Vue port of [react-spinners](https://github.com/davidhu2000/react-spinners) by [David Hu](https://github.com/davidhu2000), who's library is based on [Halogen](https://github.com/yuanyan/halogen).
