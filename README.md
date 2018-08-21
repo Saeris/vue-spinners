@@ -5,7 +5,7 @@ A Vue.js port of [react-spinners](https://github.com/davidhu2000/react-spinners)
 ## Demo
 
 [Demo Sandbox](https://codesandbox.io/s/github/Saeris/vue-spinners/tree/master/example)
-[Demo Page](https://0qo4owo1qn.codesandbox.io/)
+[Demo Page](https://vue-spinners.netlify.com/)
 
 ## Installation
 
