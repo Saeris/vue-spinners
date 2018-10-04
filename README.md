@@ -1,19 +1,32 @@
-# Vue Spinners
+<h1 align="center" style="text-align: center;">Vue Spinners</h1>
+<p align="center">
+  <a href="https://www.npmjs.org/package/@saeris/vue-spinners">
+    <img src="https://img.shields.io/npm/v/@saeris/vue-spinners.svg?style=flat" alt="npm">
+  </a>
+  <a href="https://travis-ci.org/Saeris/vue-spinners">
+    <img src="https://travis-ci.org/Saeris/vue-spinners.svg?branch=master" alt="travis">
+  </a>
+  <a href="https://codecov.io/gh/Saeris/vue-spinners">
+    <img src="https://codecov.io/gh/Saeris/vue-spinners/branch/master/graph/badge.svg" alt="codecov"/>
+  </a>
+  <a href="https://snyk.io/test/github/Saeris/vue-spinners?targetFile=package.json">
+    <img src="https://snyk.io/test/github/Saeris/vue-spinners/badge.svg?targetFile=package.json" alt="Known Vulnerabilities">
+  </a>
+  <a href="https://greenkeeper.io/">
+    <img src="https://badges.greenkeeper.io/Saeris/vue-spinners.svg" alt="Known Vulnerabilities" alt="greenkeeper">
+  </a>
+</p>
+<p align="center">A Vue.js port of <a href="https://github.com/davidhu2000/react-spinners">react-spinners</a>.</p>
 
-A Vue.js port of [react-spinners](https://github.com/davidhu2000/react-spinners).
-
-## Demo
-
-[Demo Sandbox](https://codesandbox.io/s/github/Saeris/vue-spinners/tree/master/example)
-[Demo Page](https://vue-spinners.saeris.io/)
-
-## Installation
+## 📦 Installation
 
 ```bash
+npm install --save @saeris/vue-spinners
+# or
 yarn add @saeris/vue-spinners
 ```
 
-## Usage
+## 🔧 Usage
 
 There are a number of ways you can use this library! Here are a few examples:
 
@@ -80,7 +93,7 @@ export default {
 </script>
 ```
 
-## Available Loaders, PropTypes, and Default Values
+## 📋 Available Loaders, PropTypes, and Default Values
 
 Common default props for all loaders:
 
@@ -115,6 +128,15 @@ SkewLoader              | `20`     |            |           |            |
 SquareLoader            | `50`     |            |           |            |
 SyncLoader              | `15`     |            |           |            | `2px`
 
-## Acknowledgements
+## 🏖️ Demo
+
+You can either visit the [live demo site](https://vue-spinners.saeris.io), clone this repo and run the demo locally using `yarn start` and opening your browser to http://localhost:8080, or you can just play with it inside of CodeSandbox [here](https://codesandbox.io/s/github/Saeris/vue-spinners/tree/master/example).
+
+
+## 📣 Acknowledgements
 
 This library is a Vue port of [react-spinners](https://github.com/davidhu2000/react-spinners) by [David Hu](https://github.com/davidhu2000), who's library is based on [Halogen](https://github.com/yuanyan/halogen).
+
+## 🥂 License
+
+Released under the [MIT license](https://github.com/Saeris/vue-spinners/blob/master/LICENSE.md).

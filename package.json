@@ -1,6 +1,6 @@
 {
   "name": "@saeris/vue-spinners",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Vue port of React Spinners",
   "license": "MIT",
   "keywords": [
@@ -25,8 +25,14 @@
     "build:demo": "vue-cli-service build --dest ./example/dist --modern --target app --name demo ./example/src/main.js",
     "build:lib": "vue-cli-service build --dest lib --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit",
-    "postinstall": "cd ./example && yarn"
+    "test": "yarn lint && vue-cli-service test:unit",
+    "test:watch": "yarn test --watch",
+    "test:coverage": "yarn test --coverage && codecov",
+    "postinstall": "cd ./example && yarn",
+    "precommit": "lint-staged",
+    "prepublish": "snyk protect",
+    "prepublishOnly": "yarn test && yarn build:lib",
+    "release": "yarn publish --access public"
   },
   "peerDependencies": {
     "emotion": "9.2.6",
@@ -42,6 +48,7 @@
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "codecov": "^3.1.0",
     "emotion": "9.2.6",
     "eslint": "^5.4.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -55,6 +62,7 @@
     "lint-staged": "^7.2.2",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
+    "snyk": "^1.100.1",
     "vue": "^2.5.2",
     "vue-emotion": "0.4.2",
     "vue-template-compiler": "^2.5.17"
