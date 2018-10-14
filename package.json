@@ -1,6 +1,6 @@
 {
   "name": "@saeris/vue-spinners",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Vue port of React Spinners",
   "license": "MIT",
   "keywords": [
@@ -28,7 +28,6 @@
     "test": "yarn lint && vue-cli-service test:unit",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage && codecov",
-    "postinstall": "cd ./example && yarn",
     "precommit": "lint-staged",
     "prepublish": "snyk protect",
     "prepublishOnly": "yarn test && yarn build:lib",
