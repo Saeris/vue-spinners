@@ -16,6 +16,7 @@ before_install:
   - yarn global add greenkeeper-lockfile@1
 
 before_script:
+  - cd demo && yarn && cd ..
   - greenkeeper-lockfile-update
   - yarn test:coverage
 
