@@ -62,7 +62,7 @@
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "snyk": "^1.100.1",
-    "vue": "^2.5.2",
+    "vue": "^2.5.18",
     "vue-emotion": "0.4.2",
     "vue-template-compiler": "^2.5.17"
   },
