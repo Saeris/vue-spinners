@@ -6,7 +6,7 @@
     "@saeris/vue-spinners": "^1.0.5",
     "emotion": "9.2.12",
     "v-click-outside": "2.0.1",
-    "vue": "^2.5.2",
+    "vue": "^2.6.2",
     "vue-class-component": "6.3.1",
     "vue-color": "2.6.0",
     "vue-emotion": "0.4.2"
