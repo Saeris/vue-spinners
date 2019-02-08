@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "emotion": "9.2.6",
-    "vue": "^2.5.2",
+    "vue": "^2.6.4",
     "vue-emotion": "0.4.2"
   },
   "devDependencies": {
