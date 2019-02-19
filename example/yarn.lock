@@ -7606,9 +7606,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-class-component@6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.3.1.tgz#86efc164cf3f0ff61244f26518cafae718f93dae"
+vue-class-component@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.0.0.tgz#b51ed28f95fb226dcc8da54ac1fbc64416755776"
+  integrity sha512-m3QGgzae4DWIqaVF5qEW77oECssBL78YEOCaWHvT5DBSTm++Y9a9U+cygxBZnZhbpk8CCjRY6ayb1TC+QFPlSQ==
 
 vue-color@2.6.0:
   version "2.6.0"
