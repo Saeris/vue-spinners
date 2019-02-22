@@ -64,7 +64,7 @@
     "snyk": "^1.100.1",
     "vue": "^2.6.7",
     "vue-emotion": "0.4.2",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.6.7"
   },
   "browserslist": [
     "> 1%",
