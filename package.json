@@ -36,7 +36,7 @@
   "peerDependencies": {
     "emotion": "9.2.6",
     "vue": "^2.5.2",
-    "vue-emotion": "0.4.2"
+    "vue-emotion": "0.4.28"
   },
   "devDependencies": {
     "@vue/cli": "^3.0.1",
