@@ -9,7 +9,7 @@
     "vue": "^2.5.2",
     "vue-class-component": "6.3.1",
     "vue-color": "2.6.0",
-    "vue-emotion": "0.4.2"
+    "vue-emotion": "0.4.28"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
