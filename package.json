@@ -34,7 +34,7 @@
     "release": "yarn publish --access public"
   },
   "peerDependencies": {
-    "emotion": "9.2.6",
+    "emotion": "10.0.9",
     "vue": "^2.5.2",
     "vue-emotion": "0.4.2"
   },
