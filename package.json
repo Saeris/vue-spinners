@@ -48,7 +48,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "codecov": "^3.1.0",
-    "emotion": "9.2.12",
+    "emotion": "10.0.17",
     "eslint": "^5.6.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.10.1",
