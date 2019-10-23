@@ -55,7 +55,7 @@ export default {
 **[JSX Component](https://vuejs.org/v2/guide/render-function.html#JSX)**
 
 ```js
-import { BarLoader } from '@saeris/vue-spinners'
+import { ClipLoader } from '@saeris/vue-spinners'
 
 export default {
   data: () => ({
