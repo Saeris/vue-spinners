@@ -7573,9 +7573,10 @@ uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
-v-click-outside@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-2.0.1.tgz#0a24131ce6527c66d7e1d534b82fc8ac250756b4"
+v-click-outside@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-3.0.0.tgz#90c6b83cc63634786acaa418400cd871586dbd3a"
+  integrity sha512-SHmKtZV2NsqJ0vkC85wAqswo2CnjRfoKbbyilA27U18G55aKzhqGsW8ve07cCeGnRzewh0lDKztD2Txh4IQ7sA==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
