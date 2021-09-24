@@ -132,6 +132,9 @@ SyncLoader              | `15`     |            |           |            | `2px`
 
 You can either visit the [live demo site](https://vue-spinners.saeris.io), clone this repo and run the demo locally using `yarn start` and opening your browser to http://localhost:8080, or you can just play with it inside of CodeSandbox [here](https://codesandbox.io/s/github/Saeris/vue-spinners/tree/master/example).
 
+## ⚠️ Support Notice
+
+This code is released as-is. It was originally built for use with Vue 2.x and as-such it is now very out of date. I do not plan to make continued updates to this package, so if you find it useful then I would highly recommend that you create a fork or copy-and-paste code to suit your own needs. The version of `emotion` that is uses is now very out of date and *will* cause problems when used in a modern codebase alongside another version of `emotion`. I am also unable to provide support or answer questions due to my lack of knowledge of Vuejs.
 
 ## 📣 Acknowledgements
 
