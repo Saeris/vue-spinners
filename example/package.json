@@ -9,7 +9,8 @@
     "vue": "^2.5.2",
     "vue-class-component": "6.3.1",
     "vue-color": "2.6.0",
-    "vue-emotion": "0.4.2"
+    "vue-emotion": "0.4.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
@@ -108,5 +109,10 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "main": "src/main.js"
+  "main": "src/main.js",
+  "scripts": {
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
